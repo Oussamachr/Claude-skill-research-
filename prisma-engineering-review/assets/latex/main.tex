@@ -1,0 +1,204 @@
+% =====================================================================
+%  Systematic Review manuscript template (PRISMA 2020) -- engineering
+%  Compiles with: pdflatex main && bibtex main && pdflatex main && pdflatex main
+%
+%  SWITCHING TO A VENUE CLASS
+%   IEEE journal:    \documentclass[journal]{IEEEtran}      bib style: IEEEtran
+%   IEEE conference: \documentclass[conference]{IEEEtran}   bib style: IEEEtran
+%   Elsevier:        \documentclass[preprint,12pt]{elsarticle} (+ frontmatter env)
+%                    bib style: elsarticle-num  or elsarticle-harv
+%   Springer Nature: \documentclass[sn-mathphys-num]{sn-jnl}
+%   ASME:            \documentclass{asmejour}
+%   ACM:             \documentclass[acmsmall]{acmart}       bib style: ACM-Reference-Format
+%   MDPI:            use the journal's Definitions/mdpi.cls template
+%  Then replace the title/author block below with the class's own macros.
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,longtable,multirow}
+\usepackage{siunitx}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{caption,subcaption}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+\newcommand{\authorinput}[1]{\textcolor{red}{[AUTHOR INPUT: #1]}}
+\newcommand{\verify}[1]{\textcolor{orange}{[VERIFY: #1]}}
+
+\title{<Topic>: A Systematic Review of <Scope> and Research Agenda}
+\author{\authorinput{Authors, affiliations, ORCID, corresponding e-mail}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+% 150--250 words. Context -> gap -> objective -> methods (PRISMA 2020; databases; date of last
+% search; eligibility; N screened; N included; appraisal) -> quantitative key findings -> implications
+% -> agenda. No citations. Fill every number from prisma_counts.json.
+\end{abstract}
+
+\noindent\textbf{Keywords:} systematic literature review; PRISMA; <kw3>; <kw4>; <kw5>
+
+% Elsevier: Highlights (3-5 bullets, <= 85 characters each) go in a separate file.
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+% 1. Engineering context and stakes (quantified, cited)
+% 2. Brief technical background
+% 3. Existing reviews and their limitations -> Table~\ref{tab:prior}
+% 4. Objectives and RQs
+% 5. Contributions (3--5 bullets)
+% 6. Paper organisation
+
+\begin{table}[t]
+\centering
+\caption{Comparison with existing reviews on <topic>.}\label{tab:prior}
+\small
+\begin{tabularx}{\linewidth}{@{}l c X c c X@{}}
+\toprule
+Review & Year & Scope & Systematic? & \# studies & Limitation addressed here \\
+\midrule
+\cite{key} & 20XX & & & & \\
+This review & 20XX & & PRISMA 2020 & & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The main contributions of this review are:
+\begin{itemize}
+  \item a PRISMA 2020-compliant synthesis of $N$ studies published between YYYY and YYYY;
+  \item a taxonomy of \ldots (\cref{fig:taxonomy});
+  \item a critical appraisal of validation maturity and reproducibility;
+  \item an evidence-based research agenda (\cref{tab:agenda}).
+\end{itemize}
+
+%======================================================================
+\section{Background}\label{sec:background}
+% Definitions and fundamentals only (journal versions).
+
+%======================================================================
+\section{Methodology}\label{sec:method}
+This review follows the PRISMA 2020 statement~\cite{page2021prisma}% verify key in references.bib
+\ and, where applicable, the guidelines of Kitchenham and Charters for systematic reviews in engineering disciplines. The protocol was registered on \authorinput{OSF Registries, DOI} before screening began.
+
+\subsection{Research questions}
+\begin{table}[h]
+\centering\small
+\caption{PICOC framework and research questions.}\label{tab:picoc}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule
+Population & \\ Intervention & \\ Comparison & \\ Outcome & \\ Context & \\
+\midrule
+RQ1 & \\ RQ2 & \\ RQ3 & \\ RQ4 & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Eligibility criteria}
+% Table of IC/EC with IDs.
+
+\subsection{Information sources and search strategy}
+% Databases + interface + date of last search + hits (table). Main string here; all strings in Supplementary S2.
+
+\subsection{Selection process}
+% Two stages; reviewers; independence; AI assistance disclosure; kappa on the verification sample.
+
+\subsection{Data collection and data items}
+% Extraction form fields (Supplementary S4), piloting, verification.
+
+\subsection{Quality assessment}
+% Instrument, items, scoring, thresholds, use in synthesis.
+
+\subsection{Synthesis methods}
+% SWiM narrative / taxonomy / meta-analysis (model, heterogeneity, software); sensitivity analyses; certainty (adapted GRADE).
+
+%======================================================================
+\section{Results}\label{sec:results}
+\subsection{Study selection}
+\begin{figure}[t]
+\centering
+\resizebox{\linewidth}{!}{\input{prisma_flow.tex}}
+\caption{PRISMA 2020 flow diagram of the study selection process.}\label{fig:prisma}
+\end{figure}
+
+\subsection{Characteristics of included studies}
+% Publications per year, venues, evidence types; summary table (condensed; full in Supplementary).
+
+\subsection{Quality of included studies}
+
+\subsection{RQ1: <title>}
+% Organise by taxonomy, not paper-by-paper. Claim -> k studies [refs] -> magnitude -> conditions -> explanation -> certainty.
+
+\subsection{RQ2: <title>}
+\subsection{RQ3: <title>}
+
+\begin{table}[t]
+\centering\small
+\caption{Summary of findings and certainty of evidence.}\label{tab:sof}
+\begin{tabularx}{\linewidth}{@{}X c l l X@{}}
+\toprule
+Finding & $k$ & Evidence type & Certainty & Rationale \\
+\midrule
+ & & & & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+%======================================================================
+\section{Discussion}\label{sec:discussion}
+\subsection{Principal findings}
+\subsection{Comparison with prior reviews}
+\subsection{Proposed framework}
+% \begin{figure}... \label{fig:taxonomy}
+\subsection{Implications for engineering practice}
+\subsection{Research agenda}
+\begin{table}[t]
+\centering\small
+\caption{Research agenda derived from the identified gaps.}\label{tab:agenda}
+\begin{tabularx}{\linewidth}{@{}X X X X@{}}
+\toprule
+Gap & Evidence & Why it matters & Suggested direction \\
+\midrule
+ & & & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\subsection{Limitations and threats to validity}
+% Of the evidence (23b) and of the review process (23c): databases, language, period, AI-assisted screening, publication bias.
+
+%======================================================================
+\section{Conclusions}\label{sec:conclusion}
+
+%======================================================================
+\section*{CRediT authorship contribution statement}
+\authorinput{CRediT roles}
+
+\section*{Declaration of generative AI and AI-assisted technologies}
+During the preparation of this work the author(s) used \authorinput{tool, version} in order to \authorinput{assist title/abstract screening and data extraction; language editing}. All AI-assisted decisions were verified as described in \cref{sec:method}. After using this tool, the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the publication.
+
+\section*{Declaration of competing interest}
+\authorinput{statement}
+
+\section*{Funding}
+\authorinput{funding sources, grant numbers}
+
+\section*{Data availability}
+Search strings, screening logs, the data-extraction sheet, quality scores and analysis scripts are available at \authorinput{OSF/Zenodo DOI}.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\appendix
+\section*{Supplementary material}
+S1 PRISMA 2020 checklist; S2 full search strings; S3 screening logs; S4 data-extraction table; S5 quality-assessment scores.
+
+\end{document}
